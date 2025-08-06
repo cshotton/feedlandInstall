@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules
+jspm_packages
+
+# Optional npm cache directory
+.npm
+.DS_Store
+
+# Optional REPL history
+.node_repl_history
+
+# ENV files
+.env
+
+# VSCode files
+.vscode/*
+
+.codegpt
+
+#ignore any private files
+privateFiles
+stats.json
+my_config.json
+my_docker-compose.yml
+*.code-workspace

@@ -1,0 +1,41 @@
+---
+version: "3.8"
+services:
+  feedland:
+    image: YOUR_REPO/feedland
+    container_name: feedland
+    stdin_open: true 
+    tty: true
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - ${FEEDLAND_CONFIG}:/project/config.json
+      - feedland_data:/project/privateFiles
+    ports:
+      - 1452:1452
+      - 1462:1462
+    restart: unless-stopped
+  mysql:
+    image: mysql:9
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: XXXXX # Replace with a strong password
+      #MYSQL_DATABASE: feedland # Optional: create a default database
+      MYSQL_USER: admin # Optional: create a default user
+      MYSQL_PASSWORD: XXXXX # Optional: password for the default user
+    ports:
+      - "3306:3306" # Maps host port 3306 to container port 3306
+    volumes:
+      - mysql_data:/var/lib/mysql # Persist data using a named volume
+    restart: unless-stopped # Restart policy for the service
+    healthcheck: # Optional: healthcheck to ensure database readiness
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pXXXXX"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+volumes:
+  mysql_data:
+  feedland_data:

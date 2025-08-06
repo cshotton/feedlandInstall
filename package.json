@@ -10,6 +10,14 @@
 		"type": "git",
 		"url": "https://github.com/scripting/feedLandInstall.git"
 		},
+    "scripts": {
+        "start": "node feedland.js",
+        "docker_start": "docker run --rm -it --name feedland -p 1452:1452 -p 1462:1462 -v ./config:/project/config feedland",
+        "docker_cmd": "sh ./docker_cmd.sh",
+        "docker_build": "docker build -t feedland .",
+        "docker_buildx": "docker buildx build --push --tag $REPO/$IMAGE --platform=linux/amd64,linux/arm/v7,linux/arm64/v8 ."
+    },
+
 	"dependencies" : {
 		"feedland": "*"
 		} 
