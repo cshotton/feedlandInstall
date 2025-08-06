@@ -31,7 +31,8 @@ jspm_packages
 .codegpt
 
 #ignore any private files
-privateFiles
+privateFiles/
+data/
 stats.json
 my_config.json
 my_docker-compose.yml
