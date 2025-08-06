@@ -70,3 +70,6 @@ If you need help with using FeedLand to manage and share feeds, post a note in t
 
 No matter where you post it, please look to see if your question has been covered in other threads, and please be <a href="http://guidelines.scripting.com/">respectful</a>. 
 
+### Docker Support
+Specific support for running Feedland in a Docker environment can be found in the [DOCKER.md](https://github.com/cshotton/feedlandInstall/blob/main/DOCKER.md) read-me file,
+written by [Chuck Shotton](https://github.com/cshotton).

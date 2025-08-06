@@ -52,3 +52,6 @@ do the following:
   * Open the MySQL feedland database with an appropriate SQL client and find the new record in the `pendingConfirmations` table
   * Copy the `magicString` value for the new, pending user, and insert it into a URL that looks like: `http://localhost:1452/userconfirms?emailConfirmCode=MAGIC_STRING_HERE`
   * Submit that URL in your browser and enjoy!
+
+### Credits
+ Docker mods and instructions written by [Chuck Shotton](https://github.com/cshotton)
